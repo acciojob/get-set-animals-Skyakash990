@@ -4,11 +4,11 @@ class Animal {
   }
 
   get species() {
-    return this._species;
+    return this.species;
   }
 
   set species(value) {
-    this._species = value;
+    this.species = value;
   }
 
   makeSound() {
@@ -17,8 +17,8 @@ class Animal {
 }
 
 class Dog extends Animal {
-  constructor() {
-    super("Dog");
+  constructor(species) {
+    super(species);
   }
 
   bark() {
@@ -27,8 +27,8 @@ class Dog extends Animal {
 }
 
 class Cat extends Animal {
-  constructor() {
-    super("Cat");
+  constructor(species) {
+    super(species);
   }
 
   purr() {
@@ -36,12 +36,12 @@ class Cat extends Animal {
   }
 }
 
-// Creating instances and testing methods
-const myCat = new Cat();
-myCat.makeSound(); // The Cat makes a sound
-myCat.purr();      // purr
 
-const myDog = new Dog();
+const myCat = new Cat("Siamese");
+myCat.makeSound(); // The Cat makes a sound
+myCat.purr();     
+
+const myDog = new Dog("Golden Retriever");
 myDog.makeSound(); // The Dog makes a sound
 myDog.bark();      // woof
 
